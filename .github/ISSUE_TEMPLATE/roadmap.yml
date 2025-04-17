@@ -1,0 +1,67 @@
+---
+name: Roadmap Entry
+description: Add a new entry to the roadmap
+type: task
+projects:
+  - LizardByte/22  # roadmap - https://github.com/orgs/LizardByte/projects/22
+body:
+  - type: markdown
+    attributes:
+      value: >
+        **THIS IS NOT THE PLACE TO ASK FOR SUPPORT OR FEATURE REQUESTS!** Please
+        use our [Support Center](https://app.lizardbyte.dev/support) for support
+        issues. Entries added by non-members will be ignored.
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this item?
+      description: Please search to see if an issue already exists.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: dropdown
+    id: _repositories
+    attributes:
+      label: What repo(s) does this item apply to?
+      description: Select the repo(s) this item applies to. You can select multiple repos.
+      multiple: true
+      options:
+        - TODO
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide details about this roadmap item
+      placeholder: >-
+        Describe what needs to be done, why it's important, and any other
+        relevant details
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: What priority level should this roadmap item have?
+      options:
+        - Critical (P0)
+        - High (P1)
+        - Medium (P2)
+        - Low (P3)
+    validations:
+      required: true
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: Target Milestone
+      description: When do you expect this item to be completed?
+      options:
+        - Short-term (next 1-3 months)
+        - Medium-term (3-6 months)
+        - Long-term (6+ months)
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: List any dependencies or prerequisites for this roadmap item
+      placeholder: 'e.g., "Requires completion of #123"'
