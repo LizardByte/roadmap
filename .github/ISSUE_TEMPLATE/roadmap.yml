@@ -1,9 +1,8 @@
----
 name: Roadmap Entry
 description: Add a new entry to the roadmap
 type: task
 projects:
-  - LizardByte/22  # roadmap - https://github.com/orgs/LizardByte/projects/22
+  - LizardByte/22
 body:
   - type: markdown
     attributes:
@@ -25,7 +24,59 @@ body:
       description: Select the repo(s) this item applies to. You can select multiple repos.
       multiple: true
       options:
-        - TODO
+        - LizardByte-infrastructure/.github
+        - LizardByte-infrastructure/SVT-AV1
+        - LizardByte-infrastructure/Simple-Web-Server
+        - LizardByte-infrastructure/font-util
+        - LizardByte-infrastructure/libfontenc
+        - LizardByte-infrastructure/libxcvt
+        - LizardByte-infrastructure/libxfont
+        - LizardByte-infrastructure/libxmu
+        - LizardByte-infrastructure/upptime
+        - LizardByte-infrastructure/upptime-dev
+        - LizardByte-infrastructure/wayland-protocols
+        - LizardByte-infrastructure/wlr-protocols
+        - LizardByte-infrastructure/x264
+        - LizardByte-infrastructure/x265_git
+        - LizardByte-infrastructure/xauth
+        - LizardByte-infrastructure/xserver
+        - LizardByte/.github
+        - LizardByte/GameDB
+        - LizardByte/Koko
+        - LizardByte/LizardByte.github.io
+        - LizardByte/Moonlight-XboxOG
+        - LizardByte/Sunshine
+        - LizardByte/Virtual-Gamepad-Emulation-Bus
+        - LizardByte/Virtual-Gamepad-Emulation-Client
+        - LizardByte/Virtual-Gamepad-Emulation-dotnet
+        - LizardByte/awesome-sunshine
+        - LizardByte/build-deps
+        - LizardByte/community
+        - LizardByte/contribkit
+        - LizardByte/contributors
+        - LizardByte/copr-ci
+        - LizardByte/create-release-action
+        - LizardByte/dashboard
+        - LizardByte/doxyconfig
+        - LizardByte/facebook-post-action
+        - LizardByte/homebrew-core
+        - LizardByte/homebrew-homebrew
+        - LizardByte/homebrew-release-action
+        - LizardByte/jellyfin-plugin-repo
+        - LizardByte/libdisplaydevice
+        - LizardByte/pacman-repo
+        - LizardByte/pacman-repo-builder
+        - LizardByte/roadmap
+        - LizardByte/setup-python-action
+        - LizardByte/setup-release-action
+        - LizardByte/shared-web
+        - LizardByte/support-bot
+        - LizardByte/support-bot-commands
+        - LizardByte/template-base
+        - LizardByte/tray
+        - LizardByte/uno
+        - LizardByte/update-changelog-action
+        - LizardByte/winget-pkgs
   - type: textarea
     id: description
     attributes:
