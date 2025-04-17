@@ -87,17 +87,26 @@ jobs:
         uses: ShaMan123/gha-form-dropdown-options@v2.0.3
         with:
           form: .github/ISSUE_TEMPLATE/roadmap.yml
+          template: .github/template_roadmap.yml
           dropdown: _repositories
           options: ${{ steps.fetch_repos.outputs.result }}
           dry_run: no-commit
 
       - name: git diff
-        if: steps.update_dropdown.outputs.modified
-        run: git diff --color
+        id: git_diff
+        run: |
+          file=".github/ISSUE_TEMPLATE/roadmap.yml"
+          echo "---$(cat $file)" > $file
+          git diff --color
+
+          # set multi-line output
+          echo "GIT_DIFF<<EOF" >> $GITHUB_OUTPUT
+          echo "$(git diff)" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create/Update Pull Request
         if: |
-          steps.update_dropdown.outputs.modified &&
+          steps.git_diff.outputs.git_diff != '' &&
           github.event_name != 'pull_request'
         uses: peter-evans/create-pull-request@v7
         with:
