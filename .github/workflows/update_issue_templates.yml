@@ -90,13 +90,13 @@ jobs:
           dry_run: no-commit
 
       - name: git diff
-        if: steps.update_dropdown.outputs.modified
+        if: steps.update_dropdown.outputs.modified == 'true'
         run: git diff --color
 
       - name: Create/Update Pull Request
         id: create-pr
         if: |
-          steps.update_dropdown.outputs.modified &&
+          steps.update_dropdown.outputs.modified == 'true' &&
           github.event_name != 'pull_request'
         uses: peter-evans/create-pull-request@v7
         with:
@@ -118,7 +118,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
         if: |
-          steps.update_dropdown.outputs.modified &&
+          steps.create-pr.outputs.pull-request-number != '' &&
+          steps.update_dropdown.outputs.modified == 'true' &&
           github.event_name != 'pull_request'
         run: |
           gh \
