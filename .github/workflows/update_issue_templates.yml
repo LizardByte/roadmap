@@ -17,13 +17,9 @@ on:
       - opened
       - reopened
       - synchronize
-    paths:
-      - '.github/ISSUE_TEMPLATE/roadmap.yml'
   push:
     branches:
       - master
-    paths:
-      - '.github/workflows/update_issue_templates.yml'
 
 jobs:
   update-repositories:
@@ -98,6 +94,7 @@ jobs:
         run: git diff --color
 
       - name: Create/Update Pull Request
+        id: create-pr
         if: |
           steps.update_dropdown.outputs.modified &&
           github.event_name != 'pull_request'
@@ -116,3 +113,18 @@ jobs:
           labels: |
             auto-approve
             auto-merge
+
+      - name: Automerge PR
+        env:
+          GH_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
+        if: |
+          steps.update_dropdown.outputs.modified &&
+          github.event_name != 'pull_request'
+        run: |
+          gh \
+            pr \
+            merge \
+            --auto \
+            --delete-branch \
+            --squash \
+            "${{ steps.create-pr.outputs.pull-request-number }}"
