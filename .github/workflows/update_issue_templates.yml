@@ -84,29 +84,22 @@ jobs:
 
       - name: Update repositories dropdown
         id: update_dropdown
-        uses: ShaMan123/gha-form-dropdown-options@v2.0.3
+        # uses: ShaMan123/gha-form-dropdown-options@v2.0.3
+        uses: ReenigneArcher/gha-form-dropdown-options@fix/yamllint-errors
         with:
           form: .github/ISSUE_TEMPLATE/roadmap.yml
-          template: .github/template_roadmap.yml
+          template: .github/t_roadmap.yml
           dropdown: _repositories
           options: ${{ steps.fetch_repos.outputs.result }}
           dry_run: no-commit
 
       - name: git diff
-        id: git_diff
-        run: |
-          file=".github/ISSUE_TEMPLATE/roadmap.yml"
-          echo "---$(cat $file)" > $file
-          git diff --color
-
-          # set multi-line output
-          echo "GIT_DIFF<<EOF" >> $GITHUB_OUTPUT
-          echo "$(git diff)" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+        if: steps.update_dropdown.outputs.modified
+        run: git diff --color
 
       - name: Create/Update Pull Request
         if: |
-          steps.git_diff.outputs.git_diff != '' &&
+          steps.update_dropdown.outputs.modified &&
           github.event_name != 'pull_request'
         uses: peter-evans/create-pull-request@v7
         with:
