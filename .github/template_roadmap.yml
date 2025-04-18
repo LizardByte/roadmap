@@ -3,14 +3,14 @@ name: Roadmap Entry
 description: Add a new entry to the roadmap
 type: task
 projects:
-  - LizardByte/22
+  - LizardByte/22  # roadmap - https://github.com/orgs/LizardByte/projects/22
 body:
   - type: markdown
     attributes:
       value: >
-        **THIS IS NOT THE PLACE TO ASK FOR SUPPORT OR FEATURE REQUESTS!** Please
-        use our [Support Center](https://app.lizardbyte.dev/support) for support
-        issues. Entries added by non-members will be ignored.
+        **THIS IS NOT THE PLACE TO ASK FOR SUPPORT OR FEATURE REQUESTS!**
+        Please use our [Support Center](https://app.lizardbyte.dev/support) for support issues.
+        Entries added by non-members will be ignored.
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this item?
@@ -31,9 +31,7 @@ body:
     attributes:
       label: Description
       description: Provide details about this roadmap item
-      placeholder: >-
-        Describe what needs to be done, why it's important, and any other
-        relevant details.
+      placeholder: Describe what needs to be done, why it's important, and any other relevant details.
     validations:
       required: true
   - type: dropdown
