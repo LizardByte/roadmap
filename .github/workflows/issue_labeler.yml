@@ -1,0 +1,61 @@
+---
+name: Issue labeler
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - reopened
+
+permissions:
+  contents: read
+
+jobs:
+  label-component:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse issue form
+        uses: stefanbuck/github-issue-parser@v3
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/roadmap.yml
+
+      - name: Set repository labels
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v3
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: _repositories
+          token: ${{ secrets.GH_BOT_TOKEN }}
+
+      - name: Set stack labels
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v3
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: stack
+          token: ${{ secrets.GH_BOT_TOKEN }}
+
+      - name: Set effort labels
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v3
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: effort
+          token: ${{ secrets.GH_BOT_TOKEN }}
+
+      - name: Set priority labels
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v3
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: priority
+          token: ${{ secrets.GH_BOT_TOKEN }}
+
+      - name: Set milestone labels
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v3
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: milestone
+          token: ${{ secrets.GH_BOT_TOKEN }}

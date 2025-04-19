@@ -7,18 +7,24 @@ The roadmap consists of GitHub issues that outline future plans, improvements, a
 
 This central roadmap repository helps us:
 - Coordinate development efforts across multiple repositories
-- Establish clear priorities and timelines
 - Track dependencies between projects
 - Provide transparency about our development direction
+- Clearly describe ideas and goals about our projects, and make it easier for new contributors to get involved
 
 ## How It Works
 
 Roadmap items are maintained as GitHub issues in this repository. Each item includes:
 - Target repositories
-- Priority level
-- Timeline expectations
-- Dependencies
+- Languages/Skills/Technologies involved
 - Detailed description
+- Estimated effort
+- Priority level
+- Milestone estimate
+- Dependencies
+
+> [!NOTE]  
+> LizardByte projects are maintained by volunteers.
+> The roadmap is not a guarantee of future work, but rather a guide to our current priorities and goals.
 
 ## For Team Members
 
