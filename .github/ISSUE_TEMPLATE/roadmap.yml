@@ -147,10 +147,10 @@ body:
         - Large (1-2 weeks)
         - Extra Large (2+ weeks)
       options:
-        - Small
-        - Medium
-        - Large
-        - Extra Large
+        - effort:Small
+        - effort:Medium
+        - effort:Large
+        - effort:Extra-Large
     validations:
       required: true
   - type: dropdown
@@ -159,10 +159,10 @@ body:
       label: Priority
       description: What priority level should this roadmap item have?
       options:
-        - Critical
-        - High
-        - Medium
-        - Low
+        - priority:Critical
+        - priority:High
+        - priority:Medium
+        - priority:Low
     validations:
       required: true
   - type: dropdown
