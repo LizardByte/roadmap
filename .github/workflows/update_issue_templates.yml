@@ -80,8 +80,7 @@ jobs:
 
       - name: Update repositories dropdown
         id: update_dropdown
-        # uses: ShaMan123/gha-form-dropdown-options@v2.0.3
-        uses: ReenigneArcher/gha-form-dropdown-options@fix/yamllint-errors
+        uses: ShaMan123/gha-form-dropdown-options@v2.0.5
         with:
           form: .github/ISSUE_TEMPLATE/roadmap.yml
           template: .github/t_roadmap.yml
