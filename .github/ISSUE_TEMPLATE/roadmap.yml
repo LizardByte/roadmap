@@ -8,8 +8,8 @@
 name: Roadmap Entry
 description: Add a new entry to the roadmap
 type: task
-projects:
-  - LizardByte/22
+labels:
+  - needs-triage
 body:
   - type: markdown
     attributes:
@@ -27,7 +27,7 @@ body:
   - type: dropdown
     id: _repositories
     attributes:
-      label: What repo(s) does this item apply to?
+      label: Repositories
       description: Select the repo(s) this item applies to. You can select multiple repos.
       multiple: true
       options:
@@ -84,6 +84,48 @@ body:
         - LizardByte/uno
         - LizardByte/update-changelog-action
         - LizardByte/winget-pkgs
+  - type: dropdown
+    id: stack
+    attributes:
+      label: Languages/Skills/Technologies
+      description: |
+        Select the languages/skills/technologies needed to complete this item.
+        You can select multiple options.
+      multiple: true
+      options:
+        - Android
+        - Bash/Shell/Scripting
+        - C
+        - C++
+        - C#
+        - CMake
+        - CSS
+        - Docker
+        - Documentation
+        - FFMpeg
+        - git
+        - GitHub actions
+        - Go
+        - HTML
+        - iOS
+        - Java
+        - JavaScript
+        - Kotlin
+        - Legal/Licensing
+        - Linux
+        - Markdown
+        - macOS
+        - Objective-C
+        - packaging
+        - Python
+        - Rest API
+        - Ruby
+        - Rust
+        - SQL
+        - TypeScript
+        - Video encoding/decoding
+        - Vue
+        - Windows
   - type: textarea
     id: description
     attributes:
@@ -95,15 +137,32 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: effort
+    attributes:
+      label: Estimated Effort
+      description: |
+        How much effort is required to complete this item?
+        - Small (1-2 days)
+        - Medium (3-5 days)
+        - Large (1-2 weeks)
+        - Extra Large (2+ weeks)
+      options:
+        - Small
+        - Medium
+        - Large
+        - Extra Large
+    validations:
+      required: true
+  - type: dropdown
     id: priority
     attributes:
       label: Priority
       description: What priority level should this roadmap item have?
       options:
-        - Critical (P0)
-        - High (P1)
-        - Medium (P2)
-        - Low (P3)
+        - Critical
+        - High
+        - Medium
+        - Low
     validations:
       required: true
   - type: dropdown
@@ -112,9 +171,9 @@ body:
       label: Target Milestone
       description: When do you expect this item to be completed?
       options:
-        - Short-term (next 1-3 months)
-        - Medium-term (3-6 months)
-        - Long-term (6+ months)
+        - 1-3 months
+        - 3-6 months
+        - 6+ months
     validations:
       required: true
   - type: textarea
