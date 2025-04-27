@@ -1,5 +1,7 @@
 ---
 name: Update Repositories List in Roadmap
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
@@ -121,9 +123,7 @@ jobs:
           steps.update_dropdown.outputs.modified == 'true' &&
           github.event_name != 'pull_request'
         run: |
-          gh \
-            pr \
-            merge \
+          gh pr merge \
             --auto \
             --delete-branch \
             --squash \
