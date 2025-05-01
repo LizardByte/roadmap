@@ -63,6 +63,7 @@ body:
         - LizardByte/dashboard
         - LizardByte/doxyconfig
         - LizardByte/facebook-post-action
+        - LizardByte/gamepad-helper
         - LizardByte/homebrew-core
         - LizardByte/homebrew-homebrew
         - LizardByte/homebrew-release-action
