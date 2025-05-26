@@ -82,7 +82,7 @@ jobs:
 
       - name: Update repositories dropdown
         id: update_dropdown
-        uses: ShaMan123/gha-form-dropdown-options@v2.0.5
+        uses: ShaMan123/gha-form-dropdown-options@v2.1.0
         with:
           form: .github/ISSUE_TEMPLATE/roadmap.yml
           template: .github/t_roadmap.yml
