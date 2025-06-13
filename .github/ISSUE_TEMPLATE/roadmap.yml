@@ -67,7 +67,6 @@ body:
         - LizardByte/homebrew-core
         - LizardByte/homebrew-homebrew
         - LizardByte/homebrew-release-action
-        - LizardByte/jellyfin-plugin-repo
         - LizardByte/libdisplaydevice
         - LizardByte/pacman-repo
         - LizardByte/pacman-repo-builder
