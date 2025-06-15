@@ -53,6 +53,7 @@ body:
         - LizardByte/Virtual-Gamepad-Emulation-Bus
         - LizardByte/Virtual-Gamepad-Emulation-Client
         - LizardByte/Virtual-Gamepad-Emulation-dotnet
+        - LizardByte/actions
         - LizardByte/awesome-sunshine
         - LizardByte/build-deps
         - LizardByte/community
