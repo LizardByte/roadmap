@@ -32,7 +32,9 @@ body:
         - LizardByte-infrastructure/SVT-AV1
         - LizardByte-infrastructure/Simple-Web-Server
         - LizardByte-infrastructure/font-util
+        - LizardByte-infrastructure/libevdev
         - LizardByte-infrastructure/libfontenc
+        - LizardByte-infrastructure/libnotify
         - LizardByte-infrastructure/libxcvt
         - LizardByte-infrastructure/libxfont
         - LizardByte-infrastructure/libxmu
