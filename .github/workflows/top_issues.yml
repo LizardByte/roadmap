@@ -1,0 +1,35 @@
+---
+name: Top issues
+
+on:
+  schedule:
+    - cron: '0 6/12 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: 'top-issues'
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  top-issues:
+    name: Top issues
+    runs-on: ubuntu-latest
+    steps:
+      - name: Top issues action
+        uses: rickstaa/top-issues-action@v1.3.101
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          custom_label: 'planned'
+          dashboard: true
+          dashboard_show_total_reactions: true
+          label: false
+          top_bugs: false
+          top_features: false
+          top_issues: false
+          top_list_size: 10
+          top_pull_requests: false
