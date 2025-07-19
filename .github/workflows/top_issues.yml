@@ -30,6 +30,6 @@ jobs:
           label: false
           top_bugs: false
           top_features: false
-          top_issues: false
+          top_issues: true
           top_list_size: 10
           top_pull_requests: false
