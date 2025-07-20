@@ -24,7 +24,6 @@ jobs:
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
         with:
-          custom_label: 'planned'
           dashboard: true
           dashboard_show_total_reactions: true
           label: false
