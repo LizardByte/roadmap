@@ -39,7 +39,7 @@ jobs:
           else
             ORGS="LizardByte,LizardByte-infrastructure"  # Default organizations
           fi
-          echo "orgs=$ORGS" >> $GITHUB_OUTPUT
+          echo "orgs=$ORGS" >> "${GITHUB_OUTPUT}"
           echo "Organizations to process: $ORGS"
 
       - name: Fetch repositories
