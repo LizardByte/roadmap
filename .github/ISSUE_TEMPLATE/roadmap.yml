@@ -50,9 +50,7 @@ body:
         - LizardByte/GameDB
         - LizardByte/Koko
         - LizardByte/LizardByte.github.io
-        - LizardByte/Moonlight-XboxOG
         - LizardByte/Sunshine
-        - LizardByte/Virtual-Gamepad-Emulation-Bus
         - LizardByte/Virtual-Gamepad-Emulation-Client
         - LizardByte/Virtual-Gamepad-Emulation-dotnet
         - LizardByte/actions
