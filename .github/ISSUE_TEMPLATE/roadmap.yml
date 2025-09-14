@@ -55,6 +55,7 @@ body:
         - LizardByte/Virtual-Gamepad-Emulation-dotnet
         - LizardByte/actions
         - LizardByte/awesome-sunshine
+        - LizardByte/beautiful-jekyll-next
         - LizardByte/build-deps
         - LizardByte/community
         - LizardByte/contribkit
