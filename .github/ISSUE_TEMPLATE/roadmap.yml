@@ -66,6 +66,7 @@ body:
         - LizardByte/homebrew-core
         - LizardByte/homebrew-homebrew
         - LizardByte/libdisplaydevice
+        - LizardByte/packages
         - LizardByte/pacman-repo
         - LizardByte/pacman-repo-builder
         - LizardByte/roadmap
