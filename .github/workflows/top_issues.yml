@@ -1,5 +1,6 @@
 ---
 name: Top issues
+permissions: {}
 
 on:
   schedule:
@@ -10,13 +11,13 @@ concurrency:
   group: 'top-issues'
   cancel-in-progress: true
 
-permissions:
-  contents: read
-  issues: write
 
 jobs:
   top-issues:
     name: Top issues
+    permissions:
+      contents: read
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: Top issues action
