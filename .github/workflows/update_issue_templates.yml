@@ -1,7 +1,6 @@
 ---
 name: Update Repositories List in Roadmap
-permissions:
-  contents: read
+permissions: {}
 
 on:
   workflow_dispatch:
@@ -13,12 +12,6 @@ on:
   schedule:
     - cron: '0 0 * * *'
   pull_request:
-    branches:
-      - master
-    types:
-      - opened
-      - reopened
-      - synchronize
   push:
     branches:
       - master
@@ -26,6 +19,8 @@ on:
 jobs:
   update-repositories:
     name: Update Repository List
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
