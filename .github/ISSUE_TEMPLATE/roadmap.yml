@@ -69,6 +69,7 @@ body:
         - LizardByte/gamepad-helper
         - LizardByte/homebrew-core
         - LizardByte/homebrew-homebrew
+        - LizardByte/i18n
         - LizardByte/libdisplaydevice
         - LizardByte/packages
         - LizardByte/pacman-repo
