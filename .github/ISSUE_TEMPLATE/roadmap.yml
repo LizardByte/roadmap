@@ -74,6 +74,7 @@ body:
         - LizardByte/i18n
         - LizardByte/jellyfin-plugin-repo
         - LizardByte/libdisplaydevice
+        - LizardByte/libvirtualdisplay
         - LizardByte/packages
         - LizardByte/pacman-repo
         - LizardByte/pacman-repo-builder
