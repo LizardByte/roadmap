@@ -75,6 +75,7 @@ body:
         - LizardByte/jellyfin-plugin-repo
         - LizardByte/libdisplaydevice
         - LizardByte/libvirtualdisplay
+        - LizardByte/libvirtualhid
         - LizardByte/lizardbyte-common
         - LizardByte/packages
         - LizardByte/pacman-repo
