@@ -86,7 +86,6 @@ body:
         - LizardByte/support-bot-commands
         - LizardByte/template-base
         - LizardByte/tray
-        - LizardByte/uno
         - LizardByte/winget-pkgs
   - type: dropdown
     id: stack
