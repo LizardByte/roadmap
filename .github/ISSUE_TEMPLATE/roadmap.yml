@@ -67,6 +67,7 @@ body:
         - LizardByte/contributors
         - LizardByte/copr-ci
         - LizardByte/dashboard
+        - LizardByte/dockle
         - LizardByte/doxyconfig
         - LizardByte/gamepad-helper
         - LizardByte/homebrew-core
