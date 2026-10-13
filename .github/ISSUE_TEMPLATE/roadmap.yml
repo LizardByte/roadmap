@@ -69,7 +69,6 @@ body:
         - LizardByte/dashboard
         - LizardByte/dockle
         - LizardByte/gamepad-helper
-        - LizardByte/homebrew-core
         - LizardByte/homebrew-homebrew
         - LizardByte/i18n
         - LizardByte/jellyfin-plugin-repo
@@ -86,7 +85,6 @@ body:
         - LizardByte/support-bot-commands
         - LizardByte/template-base
         - LizardByte/tray
-        - LizardByte/winget-pkgs
   - type: dropdown
     id: stack
     attributes:
