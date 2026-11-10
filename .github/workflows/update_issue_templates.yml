@@ -6,9 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       organizations:
-        description: 'GitHub organizations to fetch repositories from (comma-separated)'
-        required: true
-        default: 'LizardByte,LizardByte-infrastructure'
+        description: 'Optional comma-separated organizations; leave empty to use the shared organization registry'
+        required: false
   schedule:
     - cron: '0 0 * * *'
   pull_request:
@@ -28,22 +27,43 @@ jobs:
 
       - name: Get organizations
         id: get_orgs
-        run: |
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            ORGS="${{ github.event.inputs.organizations }}"
-          else
-            ORGS="LizardByte,LizardByte-infrastructure"  # Default organizations
-          fi
-          echo "orgs=$ORGS" >> "${GITHUB_OUTPUT}"
-          echo "Organizations to process: $ORGS"
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3  # v9.0.0
+        env:
+          ORGANIZATIONS: ${{ inputs.organizations }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const override = (process.env.ORGANIZATIONS || '').trim();
+            let orgs;
+            if (override) {
+              orgs = override.split(',').map(org => org.trim()).filter(Boolean);
+            } else {
+              const {data} = await github.rest.repos.getContent({
+                owner: 'LizardByte',
+                repo: '.github',
+                path: 'organizations.json',
+                ref: 'master'
+              });
+              orgs = JSON.parse(Buffer.from(data.content, 'base64').toString('utf8'));
+            }
+
+            if (!Array.isArray(orgs) || orgs.length === 0 ||
+                orgs.some(org => typeof org !== 'string' || !org.trim())) {
+              throw new Error('Organizations must be a non-empty array of organization names');
+            }
+            orgs = [...new Set(orgs.map(org => org.trim()))];
+            console.log(`Organizations to process: ${orgs.join(', ')}`);
+            return orgs;
 
       - name: Fetch repositories
         id: fetch_repos
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3  # v9.0.0
+        env:
+          ORGANIZATIONS: ${{ steps.get_orgs.outputs.result }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const orgs = '${{ steps.get_orgs.outputs.orgs }}'.split(',').map(org => org.trim());
+            const orgs = JSON.parse(process.env.ORGANIZATIONS);
             let allRepos = [];
 
             for (const org of orgs) {
@@ -51,7 +71,8 @@ jobs:
                 console.log(`Fetching repositories for organization: ${org}`);
 
                 const opts = github.rest.repos.listForOrg.endpoint.merge({
-                  org: org
+                  org: org,
+                  per_page: 100
                 });
 
                 const repos = await github.paginate(opts);
@@ -59,7 +80,7 @@ jobs:
 
                 const activeRepos = repos
                   .filter(repo => !repo.archived)
-                  .map(repo => `${org}/${repo.name}`);
+                  .map(repo => repo.full_name);
 
                 console.log(`Found ${activeRepos.length} active repositories for ${org}`);
                 allRepos = [...allRepos, ...activeRepos];
@@ -69,8 +90,9 @@ jobs:
               }
             }
 
-            // Sort repositories alphabetically
-            allRepos.sort();
+            // Keep each canonical org/repo label once and ignore capitalization when sorting.
+            allRepos = [...new Set(allRepos)];
+            allRepos.sort((left, right) => left.localeCompare(right, 'en', {sensitivity: 'base'}));
 
             console.log(`Found ${allRepos.length} repositories across ${orgs.length} organization(s)`);
             return allRepos;
