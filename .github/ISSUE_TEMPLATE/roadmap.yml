@@ -28,9 +28,8 @@ body:
       description: Select the repo(s) this item applies to. You can select multiple repos.
       multiple: true
       options:
+        - KokoStreamTV/.github
         - LizardByte-infrastructure/.github
-        - LizardByte-infrastructure/SVT-AV1
-        - LizardByte-infrastructure/Simple-Web-Server
         - LizardByte-infrastructure/font-util
         - LizardByte-infrastructure/libevdev
         - LizardByte-infrastructure/libfontenc
@@ -38,6 +37,8 @@ body:
         - LizardByte-infrastructure/libxcvt
         - LizardByte-infrastructure/libxfont
         - LizardByte-infrastructure/libxmu
+        - LizardByte-infrastructure/Simple-Web-Server
+        - LizardByte-infrastructure/SVT-AV1
         - LizardByte-infrastructure/upptime
         - LizardByte-infrastructure/upptime-dev
         - LizardByte-infrastructure/wayland-protocols
@@ -47,19 +48,8 @@ body:
         - LizardByte-infrastructure/xauth
         - LizardByte-infrastructure/xserver
         - LizardByte/.github
-        - LizardByte/GameDB
-        - LizardByte/Koko
-        - LizardByte/LizardByte.github.io
-        - LizardByte/Moonlight-XboxOG
-        - LizardByte/One
-        - LizardByte/PresetDB
-        - LizardByte/Sunshine
-        - LizardByte/Themerr
-        - LizardByte/ThemerrDB
-        - LizardByte/Virtual-Gamepad-Emulation-Client
         - LizardByte/actions
         - LizardByte/app-directory
-        - LizardByte/awesome-sunshine
         - LizardByte/beautiful-jekyll-next
         - LizardByte/build-deps
         - LizardByte/community
@@ -68,23 +58,38 @@ body:
         - LizardByte/copr-ci
         - LizardByte/dashboard
         - LizardByte/dockle
+        - LizardByte/GameDB
         - LizardByte/gamepad-helper
         - LizardByte/homebrew-homebrew
         - LizardByte/i18n
         - LizardByte/jellyfin-plugin-repo
+        - LizardByte/Koko
         - LizardByte/libdisplaydevice
         - LizardByte/libvirtualdisplay
         - LizardByte/libvirtualhid
         - LizardByte/lizardbyte-common
+        - LizardByte/LizardByte.github.io
+        - LizardByte/Moonlight-XboxOG
+        - LizardByte/One
         - LizardByte/packages
         - LizardByte/pacman-repo
         - LizardByte/pacman-repo-builder
+        - LizardByte/PresetDB
         - LizardByte/roadmap
         - LizardByte/shared-web
+        - LizardByte/Sunshine
         - LizardByte/support-bot
         - LizardByte/support-bot-commands
         - LizardByte/template-base
         - LizardByte/tray
+        - LizardByte/Virtual-Gamepad-Emulation-Client
+        - SunshineStream/.github
+        - SunshineStream/awesome-sunshine
+        - SunshineStream/pages-domain-test-20261101
+        - Themerr/.github
+        - Themerr/Themerr
+        - Themerr/Themerr.github.io
+        - Themerr/ThemerrDB
   - type: dropdown
     id: stack
     attributes:
