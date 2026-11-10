@@ -50,7 +50,10 @@ To add a new roadmap item:
 4. Fill out all required fields
 
 The repository list in the issue template is automatically updated daily with all active repositories across
-the LizardByte organizations.
+the organizations in
+[LizardByte's organization registry](https://github.com/LizardByte/.github/blob/master/organizations.json).
+Repository labels use `organization/repository` and are sorted alphabetically without regard to capitalization.
+Manual workflow runs can optionally override the organizations with a comma-separated list.
 
 ## For the Community
 
