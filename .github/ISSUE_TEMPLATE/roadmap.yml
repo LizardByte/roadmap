@@ -29,6 +29,8 @@ body:
       multiple: true
       options:
         - KokoStreamTV/.github
+        - KokoStreamTV/Koko
+        - KokoStreamTV/KokoStreamTV.github.io
         - LizardByte-infrastructure/.github
         - LizardByte-infrastructure/font-util
         - LizardByte-infrastructure/libevdev
@@ -63,7 +65,6 @@ body:
         - LizardByte/homebrew-homebrew
         - LizardByte/i18n
         - LizardByte/jellyfin-plugin-repo
-        - LizardByte/Koko
         - LizardByte/libdisplaydevice
         - LizardByte/libvirtualdisplay
         - LizardByte/libvirtualhid
@@ -75,7 +76,6 @@ body:
         - LizardByte/PresetDB
         - LizardByte/roadmap
         - LizardByte/shared-web
-        - LizardByte/Sunshine
         - LizardByte/support-bot
         - LizardByte/support-bot-commands
         - LizardByte/template-base
@@ -85,7 +85,8 @@ body:
         - SunshineStream/awesome-sunshine
         - SunshineStream/Moonlight-XboxOG
         - SunshineStream/One
-        - SunshineStream/pages-domain-test-20261101
+        - SunshineStream/Sunshine
+        - SunshineStream/SunshineStream.github.io
         - Themerr/.github
         - Themerr/Themerr
         - Themerr/Themerr.github.io
