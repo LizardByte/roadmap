@@ -64,6 +64,7 @@ body:
         - LizardByte/gamepad-helper
         - LizardByte/homebrew-homebrew
         - LizardByte/i18n
+        - LizardByte/jackal
         - LizardByte/jellyfin-plugin-repo
         - LizardByte/libdisplaydevice
         - LizardByte/libvirtualdisplay
